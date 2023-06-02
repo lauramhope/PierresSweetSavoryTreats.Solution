@@ -1,61 +1,72 @@
-## What Is This?
+# Recipe Box App
 
-This is an example repo corresponding to multiple lessons within the LearnHowToProgram.com walkthrough on creating a To Do List application in [Section 4: Many-to-Many Relationships](https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships).
+#### Web app using C#, EF Core, SQL, and Identity to create and display Pierre's treats.
 
-This project corresponds to the classwork and lessons that describe how to connect an ASP.NET Core MVC project to a MySQL database using [Entity Framework Core](https://learn.microsoft.com/en-us/ef/core/) with migrations. This project contains a one-to-many relationship between `Item` and `Category`, and a many-to-many relationship between `Item` and `Tag`. There are multiple lessons in this series. The first lesson in the series is [Code First Development and Migrations](https://www.learnhowtoprogram.com/c-and-net-part-time/many-to-many-relationships/code-first-development-and-migrations).
+#### By **Laura Hope**
 
-There are multiple branches in this repo that are described more below.
+## Technologies Used
 
-## How To Run This Project
+* Git
+* C#/.NET version 6.0.402
+* MySQL Workbench
+* Enity Framework Core version 6.0.0
+* ASP.NET Core Identity version 6.0.0
+* HTML & CSS
+* Bootstrap version 5.2.3
 
-### Install Tools
 
-Install the tools that are introduced in [this series of lessons on LearnHowToProgram.com](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c).
+## Description
+_This is an MVC web application that allows users to store and view information about their favorite recipes. Any user can register for an account and login through ASP.NET Core Identity to create a list of ingredients that they currently have as well as add or update the list of recipes. The user can view recipes based on rating or sort the list based on what ingredients are used or by recipe tags. If a user attempts to edit or delete a recipe without authentication, they will be redirected to the account registration page._
 
-### Set Up and Run Project
+## Setup/Installation Requirements
 
-1. Clone this repo.
-2. Open the terminal and navigate to this project's production directory called "ToDoList".
-3. Within the production directory "ToDoList", create a new file called `appsettings.json`.
-4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. For the LearnHowToProgram.com lessons, we always assume the `uid` is `root` and the `pwd` is `epicodus`.
+* _Clone this repository to your desktop._
+* _Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory at ```./RecipeBox.Solution/RecipeBox/```._
 
-```json
+#### To Configure and Access the Database:
+* _Within the production directory "RecipeBox", create a new file called ```appsettings.json```._
+* _Within ```appsettings.json```, put the following code, replacing the "uid" and "pwd" values (in the brackets below) with your own username and password for MySQL. Also replace the "database" value with your desired database name._
+```
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=to_do_list_with_many_to_many;uid=root;pwd=epicodus;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE_NAME];uid=[USERNAME];pwd=[PASSWORD];"
   }
 }
 ```
+* _Run the terminal command ```dotnet ef database update``` to create the initial MySQL database._
 
-5. Create the database using the migrations in the To Do List project. Open your shell (e.g., Terminal or GitBash) to the production directory "ToDoList", and run `dotnet ef database update`. 
-    - To optionally create a migration, run the command `dotnet ef migrations add MigrationName` where `MigrationName` is your custom name for the migration in UpperCamelCase. To learn more about migrations, visit the LHTP lesson [Code First Development and Migrations](https://www.learnhowtoprogram.com/c-and-net-part-time/many-to-many-relationships/code-first-development-and-migrations).
-6. Within the production directory "ToDoList", run `dotnet watch run` in the command line to start the project in development mode with a watcher.
-4. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/lessons/redirecting-to-https-and-issuing-a-security-certificate).
+#### To Run the App in the browser:
+* _Navigate to this project's production directory named "RecipeBox"._
+* _Run ```dotnet watch run``` in the command line to start the application in development mode with a watcher. This will open the webpage in your browser._
+* _To exit out of the application, you can use the keyboard command "CTRL+C" on Mac and Windows._
+* _Optionally, you can run ```dotnet build``` within the production directory to compile this app without running it._
 
+## Known Bugs
 
-## Available Branches
+* _No Known Issues as of 6/2/23_
 
-**1_starter_project**: This is the default branch with the starter code for the To Do List project as an ASP.NET Core MVC web application that is configured to use Entity Framework Core to communicate with a MySQL database as completed at the end of section 3. **This branch is not meant to be run using the above instructions, as it is not configured to use EF Core migrations; instead it is meant to be used as a starting point for the refactor we begin in the LHTP lesson [Code First Development and Migrations](https://www.learnhowtoprogram.com/c-and-net-part-time/many-to-many-relationships/code-first-development-and-migrations).**
+## License
 
-**2_many_to_many_setup**: This branch includes the code we added after working through the following lessons:
+_MIT License_
 
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/code-first-development-and-migrations
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/many-to-many-relationships-join-entities
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-**3_m2m_read_and_create**: This branch includes the code we added after working through the following lessons:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/many-to-many-read-functionality
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/many-to-many-create-functionality
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-**4_m2m_update_and_delete**: This branch includes the code we added after working through the following lessons:
+_Copyright (c) 2023 Laura Hope_
 
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/many-to-many-update-functionality
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/many-to-many-delete-functionality
-
-**5_model_validation**: This branch includes the code we added after working through the following lesson:
-
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/model-validation-with-validation-attributes
-
-**6_data_from_multiple_db_tables**: This branch includes the code we added after working through the following lesson:
-
-- https://www.learnhowtoprogram.com/c-and-net/many-to-many-relationships/creating-a-splash-page-with-data-from-multiple-database-tables
+_If you run into any issues or have questions, ideas or concerns, please reach out via email: lauramhope.dpt@gmail.com.  Contributions to the code are highly encouraged._
