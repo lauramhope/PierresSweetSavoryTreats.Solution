@@ -1,0 +1,118 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+
+<h1>
+  Welcome to Pierre's Sweet & Savory Market!
+</h1>
+<hr>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="6000">
+      <img src="~/img/treat1.jpeg" class="d-block w-50" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="6000">
+      <img src="~/img/treat2.jpg" class="d-block w-50" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="6000">
+      <img src="~/img/treat3.jpg" class="d-block w-50" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="6000">
+      <img src="~/img/treat4.jpg" class="d-block w-50" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<hr><br>
+
+@* <div class="row align-items-start">
+  <div class="col">
+    <h4>Recipes</h4>
+    @if (Model["recipes"].Length == 0)
+    {
+      <p>No recipes have been added yet!</p>
+    }
+    <ul>
+      @foreach (Recipe rec in Model["recipes"])
+      {
+      <li>@Html.ActionLink(@rec.RecipeName, "Details", "Recipes", new { id = @rec.RecipeId})</li>
+      }
+    </ul>
+  </div>
+
+  <div class="col">
+    @if (User.Identity.IsAuthenticated)
+    {
+      <h4>Ingredients for @User.Identity.Name</h4>
+      @if (Model["ingredients"].Length == 0)
+      {
+        <p>No ingredients have been added yet!</p>
+      }
+      <ul>
+        @foreach (Ingredient ingredient in Model["ingredients"])
+        {
+          <li>@Html.ActionLink(ingredient.IngredientName, "Details", "Ingredients", new { id = @ingredient.IngredientId})</li>
+        }
+      </ul>
+    }
+    else
+    {
+      <h4>Ingredients</h4>
+      <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your list of ingredients.</p>
+    }
+  </div>
+
+  <div class="col">
+    <h4>Tags for @User.Identity.Name</h4>
+    @if (Model["tags"].Length == 0)
+    {
+      <p>No tags have been added yet!</p>
+    }
+    <ul>
+      @foreach (Tag tag in Model["tags"])
+      {
+        <li>@Html.ActionLink(tag.Title, "Details", "Tags", new { id = @tag.TagId})</li>
+      }
+    </ul>
+  </div>
+</div>
+<br>
+<div class="row align-items start">
+  <div class="col">
+    <p>@Html.ActionLink("Manage recipes", "Index", "Recipes", null, new { @class = "btn btn-light" })</p>
+  </div>
+  <div class="col">
+    <p>@Html.ActionLink("Manage ingredients", "Index", "Ingredients", null, new { @class = "btn btn-light" })</p>
+  </div>
+  <div class="col">
+    <p>@Html.ActionLink("Manage tags", "Index", "Tags", null, new { @class = "btn btn-light" })</p>
+  </div>
+</div>
+
+<hr><br> *@
+
+<p>@Html.ActionLink("Manage Account", "Index", "Account", null, new { @class = "btn btn-secondary" })</p>
