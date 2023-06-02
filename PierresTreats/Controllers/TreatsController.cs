@@ -24,7 +24,7 @@ namespace PierresTreats.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Treats.OrderByDescending(treat => treat.Price).ToList());
+      return View(_db.Treats.OrderByDescending(treat => treat.Quantity).ToList());
     }
 
     public ActionResult Details(int id)
@@ -104,7 +104,7 @@ namespace PierresTreats.Controllers
     public ActionResult AddFlavor(int id)
     {
       Treat thisTreat = _db.Treats.FirstOrDefault(treats => treats.TreatId == id);
-      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "FlavorName");
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Description");
       return View(thisTreat);
     }
 

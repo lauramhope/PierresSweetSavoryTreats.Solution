@@ -1,0 +1,40 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresTreats.Models;
+@model PierresTreats.Models.Flavor;
+
+<h2>Flavor Details</h2>
+<hr>
+<div class="card">
+  <h4 class="card-header">Flavor: <em>@Html.DisplayFor(model => model.Description)</em></h4>
+  <div class="card-body">
+
+    @if(@Model.JoinEntities.Count == 0)
+    {
+      <p>This flavor is not used to describe any of the listed treats yet.</p>
+    }
+    else
+    {
+      <h5>This flavor is used in the following treats:</h5>
+      <ul>
+        @foreach (FlavorTreat join in Model.JoinEntities)
+        {
+          <li>Treat: @join.Treat.Name</li>
+          @using (Html.BeginForm("DeleteJoin", "Flavors"))
+          {
+            @Html.Hidden("joinId", @join.FlavorTreatId)
+            <input type="submit" value="Delete" id="deleteDetails"/>
+          }
+        }
+      </ul>
+    }
+  </div>
+</div>
+<hr><br>
+
+<p>@Html.ActionLink("Back to flavors list", "Index", "Flavors", null, new { @class = "btn btn-light" })</p>
+<p>@Html.ActionLink("Edit current flavor", "Edit", null, new { id = Model.FlavorId }, new { @class = "btn btn-light" })</p>
+<p>@Html.ActionLink("Delete current flavor", "Delete", null, new { id = Model.FlavorId }, new { @class = "btn btn-light" })</p>
+<p>@Html.ActionLink("Add current flavor to treat", "AddTreat", null, new { id = Model.FlavorId }, new { @class = "btn btn-light" })</p>

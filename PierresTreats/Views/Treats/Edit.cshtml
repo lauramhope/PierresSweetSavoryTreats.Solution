@@ -5,12 +5,13 @@
 @model PierresTreats.Models.Treat
 
 <h2>Edit</h2>
+<hr>
 
 <h4>Edit this Treat: @Html.DisplayFor(model => model.Name)</h4>
 
 <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
-<p>@Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 
 @using (Html.BeginForm())
@@ -21,8 +22,8 @@
   @Html.EditorFor(model => model.Name)
   <br>
 
-  @Html.LabelFor(model => model.Price)
-  @Html.EditorFor(model => model.Price)
+  @Html.LabelFor(model => model.Quantity)
+  @Html.EditorFor(model => model.Quantity)
 
   <input type="submit" value="Save"/>
 }

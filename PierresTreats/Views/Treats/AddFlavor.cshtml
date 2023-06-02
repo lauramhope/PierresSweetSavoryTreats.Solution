@@ -5,17 +5,18 @@
 @model PierresTreats.Models.Treat
 
 <h2>Add Flavor</h2>
+<hr>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.TreatId)
 
-  @Html.Label("Flavor")
+  @Html.Label("Flavor: ")
   @Html.DropDownList("FlavorId")
   <br />
-
+  <br />
   <input type="submit" value="Add Flavor" />
   <br>
-
+  <br>
   <p>@Html.ActionLink("Back to List", "Index", "Treats", null, new { @class = "btn btn-light" })</p>
 }

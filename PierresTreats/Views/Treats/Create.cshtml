@@ -9,7 +9,7 @@
 
 
 <p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-<p>@Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 @using (Html.BeginForm())
 {
@@ -17,8 +17,8 @@
   @Html.TextBoxFor(model => model.Name, new { placeholder = "Cinnamon Bun", style="font-style:italic"})
   <br>
   <br>
-  @Html.LabelFor(model => model.Price)<br>
-  @Html.TextBoxFor(model => model.Price, new {@type="number", required = "required", placeholder="2.50", style="font-style:italic"})<br>
+  @Html.LabelFor(model => model.Quantity)<br>
+  @Html.TextBoxFor(model => model.Quantity, new {@type="number", required = "required", placeholder="2", style="font-style:italic"})<br>
   <br>
   <input type="submit" value="Add new treat" class="btn btn-light" />
 }

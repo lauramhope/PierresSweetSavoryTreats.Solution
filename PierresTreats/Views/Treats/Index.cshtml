@@ -17,7 +17,7 @@
       <div class="hstack gap-3">
         Treat Name
         <div class="vr"></div>
-        Price
+        Quantity
       </div>
     </h6>
   }
@@ -25,7 +25,7 @@
   <ul>
     @foreach(Treat treat in Model)
     {
-      <li>@Html.ActionLink($"{treat.Name}  | ${treat.Price}", "Details", new { id = treat.TreatId })</li>
+      <li>@Html.ActionLink($"{treat.Name}  | {treat.Quantity}", "Details", new { id = treat.TreatId })</li>
     }
   </ul>
 </div>
