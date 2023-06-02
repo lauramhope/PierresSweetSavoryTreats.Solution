@@ -33,7 +33,7 @@ namespace PierresTreats.Controllers
     }
     public ActionResult Create()
     {
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
       return View();
     }
     [HttpPost]
@@ -41,7 +41,7 @@ namespace PierresTreats.Controllers
     {
       if (!ModelState.IsValid)
       {
-        ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+        ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
         return View(flavor);
       }
       else
@@ -66,7 +66,7 @@ namespace PierresTreats.Controllers
     public ActionResult Edit(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
       return View(thisFlavor);
     }
     [HttpPost]
@@ -100,7 +100,7 @@ namespace PierresTreats.Controllers
     public ActionResult AddTreat(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "TreatName");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
       return View(thisFlavor);
     }
     [HttpPost]

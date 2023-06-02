@@ -8,17 +8,17 @@
 <hr>
 
 
-<p>@Html.ValidationMessageFor(model => model.TreatName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
-<p>@Html.ValidationMessageFor(model => model.TreatPrice, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<p>@Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.TreatName, "Treat Name")<br>
-  @Html.TextBoxFor(model => model.TreatName, new { placeholder = "Cinnamon Bun", style="font-style:italic"})
+  @Html.LabelFor(model => model.Name, "Treat Name")<br>
+  @Html.TextBoxFor(model => model.Name, new { placeholder = "Cinnamon Bun", style="font-style:italic"})
   <br>
   <br>
-  @Html.LabelFor(model => model.TreatPrice)<br>
-  @Html.TextBoxFor(model => model.TreatPrice, new {@type="number", required = "required", placeholder="2.50", style="font-style:italic"})<br>
+  @Html.LabelFor(model => model.Price)<br>
+  @Html.TextBoxFor(model => model.Price, new {@type="number", required = "required", placeholder="2.50", style="font-style:italic"})<br>
   <br>
   <input type="submit" value="Add new treat" class="btn btn-light" />
 }

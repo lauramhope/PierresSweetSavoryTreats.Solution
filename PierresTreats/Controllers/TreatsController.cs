@@ -24,7 +24,7 @@ namespace PierresTreats.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Treats.OrderByDescending(treat => treat.TreatPrice).ToList());
+      return View(_db.Treats.OrderByDescending(treat => treat.Price).ToList());
     }
 
     public ActionResult Details(int id)
