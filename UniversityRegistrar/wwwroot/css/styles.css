@@ -1,0 +1,25 @@
+#footer {
+	position:fixed;
+	bottom:0px;
+	left:0px;
+	width: 100%;
+	color:#CCC;
+	background:#333;
+	padding:8px;
+}
+
+#footer p {
+	margin:0px;
+	padding:0px;
+	text-align: center;
+}
+
+nav {
+	text-align: center;
+	color:#CCC;
+	padding:8px;
+}
+
+.text-white {
+	text-align: center;
+}

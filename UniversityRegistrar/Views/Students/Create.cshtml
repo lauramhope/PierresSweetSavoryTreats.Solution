@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h4>Add a new student</h4>
+
+<p>@Html.ValidationMessageFor(model => model.StudentName, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+<!-- <p>@Html.ValidationMessageFor(model => model.CourseId, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p> -->
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.StudentName)
+  @Html.TextBoxFor(model => model.StudentName)
+
+  @Html.LabelFor(model => model.EnrollmentDate)
+  @Html.TextBoxFor(model => model.EnrollmentDate)
+
+  <!-- @Html.LabelFor(model => model.CourseId)
+  @Html.DropDownListFor(model => model.CourseId, ViewBag.CourseId as SelectList, "Select a course") -->
+
+  <input type="submit" value="Add new student" class="btn btn-primary" />
+}
+<p>@Html.ActionLink("Show all Students", "Index")</p>

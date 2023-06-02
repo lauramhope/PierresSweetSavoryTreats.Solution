@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Course
+
+<h4>Edit this course: @Html.DisplayFor(model => model.CourseName)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.CourseId)
+
+  @Html.LabelFor(model => model.CourseName)
+  @Html.EditorFor(model => model.CourseName)
+
+  @Html.LabelFor(model => model.CourseNumber)
+  @Html.EditorFor(model => model.CourseNumber)
+
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>
