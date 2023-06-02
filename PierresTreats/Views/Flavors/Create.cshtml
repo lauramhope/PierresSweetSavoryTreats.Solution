@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model PierresTreats.Models.Flavor;
+
+<h2>Add a flavor</h2>
+<hr>
+
+<p>@Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger", @style = "font-weight: 600" })</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Description, "Flavor:")<br>
+  @Html.TextBoxFor(model => model.Description, new { placeholder = "Cinnamon", style="font-style:italic"})<br>
+  <br>
+  <input type="submit" value="Add new flavor" class="btn btn-light"/>
+}
+<hr><br>
+<p>@Html.ActionLink("Show all flavors", "Index", "Flavors", null, new { @class = "btn btn-light" })</p>
+<p>@Html.ActionLink("Create a new treat", "Create", "Treats", null, new { @class = "btn btn-light" })</p>

@@ -21,7 +21,7 @@ div#footer {
 }
 
 body {
-	background: linear-gradient(90deg, rgb(223, 164, 16) 5%, rgb(189, 239, 214) 50%, rgb(237, 143, 2) 100%);
+	background: linear-gradient(90deg, rgb(223, 164, 16) 5%, rgb(189, 239, 214) 50%, hsl(36, 83%, 60%) 100%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: auto;
