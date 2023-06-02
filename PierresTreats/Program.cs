@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using UniversityRegistrar.Models;
+using PierresTreats.Models;
+using Microsoft.AspNetCore.Identity;
 
-namespace UniversityRegistrar
+namespace PierresTreats
 {
   class Program
   {
@@ -14,13 +15,18 @@ namespace UniversityRegistrar
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<UniversityRegistrarContext>(
+      builder.Services.AddDbContext<PierresTreatsContext>(
                         dbContextOptions => dbContextOptions
                           .UseMySql(
                             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
                           )
                         )
                       );
+
+      // New code below!!
+      builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<PierresTreatsContext>()
+                .AddDefaultTokenProviders();
 
       WebApplication app = builder.Build();
 
@@ -29,6 +35,10 @@ namespace UniversityRegistrar
       app.UseStaticFiles();
 
       app.UseRouting();
+
+      // New code below!
+      app.UseAuthentication(); 
+      app.UseAuthorization();
 
       app.MapControllerRoute(
           name: "default",
