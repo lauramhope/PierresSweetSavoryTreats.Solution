@@ -68,7 +68,7 @@
     @if (User.Identity.IsAuthenticated)
     {
       <h4>Flavors for @User.Identity.Name</h4>
-      @if (Model["Flavors"].Length == 0)
+      @if (Model["flavors"].Length == 0)
       {
         <p>No flavors have been added yet!</p>
       }

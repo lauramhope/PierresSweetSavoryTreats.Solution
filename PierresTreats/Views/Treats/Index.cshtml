@@ -25,7 +25,7 @@
   <ul>
     @foreach(Treat treat in Model)
     {
-      <li>@Html.ActionLink($"{treat.Name}  | {treat.Price}", "Details", new { id = treat.TreatId })</li>
+      <li>@Html.ActionLink($"{treat.Name}  | ${treat.Price}", "Details", new { id = treat.TreatId })</li>
     }
   </ul>
 </div>
