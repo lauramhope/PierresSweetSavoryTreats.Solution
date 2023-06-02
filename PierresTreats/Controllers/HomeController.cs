@@ -22,20 +22,18 @@ namespace PierresTreats.Controllers
       [HttpGet("/")]
       public async Task<ActionResult> Index()
       {
-        Treat[] treats = _db.Treats.ToArray();
-        Flavor[] flavors = _db.Flavors.ToArray();
+        Treats[] treats = _db.Treats.ToArray();
         Dictionary<string, object[]> model = new Dictionary<string, object[]>();
         model.Add("treats", treats);
-        model.Add("flavors", flavors);
-        string userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        string userId = this._userManager.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
-        // if (currentUser != null)
-        // {
-        //   Ingredient[] ingredients = _db.Ingredients
-        //                           .Where(entry => entry.User.Id == currentUser.Id)
-        //                           .ToArray();
-        //   model.Add("ingredients", ingredients);
-        // }
+        if (currentUser != null)
+        {
+          Flavor[] flavors = _db.Flavors
+                          .Where(entry => entry.User.Id == currentUser.Id)
+                          .ToArray();
+          model.Add("flavors", flavors);
+        }
         return View(model);
       }
     }
