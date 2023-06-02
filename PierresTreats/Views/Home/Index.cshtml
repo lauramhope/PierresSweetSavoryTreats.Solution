@@ -49,17 +49,17 @@
 </div>
 <hr><br>
 
-@* <div class="row align-items-start">
+<div class="row align-items-start">
   <div class="col">
-    <h4>Recipes</h4>
-    @if (Model["recipes"].Length == 0)
+    <h4>Treats</h4>
+    @if (Model["treats"].Length == 0)
     {
-      <p>No recipes have been added yet!</p>
+      <p>No treats have been added yet!</p>
     }
     <ul>
-      @foreach (Recipe rec in Model["recipes"])
+      @foreach (Treat treat in Model["treats"])
       {
-      <li>@Html.ActionLink(@rec.RecipeName, "Details", "Recipes", new { id = @rec.RecipeId})</li>
+      <li>@Html.ActionLink(@treat.TreatName, "Details", "Treats", new { id = @treat.TreatId})</li>
       }
     </ul>
   </div>
@@ -67,52 +67,35 @@
   <div class="col">
     @if (User.Identity.IsAuthenticated)
     {
-      <h4>Ingredients for @User.Identity.Name</h4>
-      @if (Model["ingredients"].Length == 0)
+      <h4>Flavors for @User.Identity.Name</h4>
+      @if (Model["Flavors"].Length == 0)
       {
-        <p>No ingredients have been added yet!</p>
+        <p>No flavors have been added yet!</p>
       }
       <ul>
-        @foreach (Ingredient ingredient in Model["ingredients"])
+        @foreach (Flavor flavor in Model["flavors"])
         {
-          <li>@Html.ActionLink(ingredient.IngredientName, "Details", "Ingredients", new { id = @ingredient.IngredientId})</li>
+          <li>@Html.ActionLink(flavor.FlavorDescription, "Details", "Flavors", new { id = @flavor.FlavorId})</li>
         }
       </ul>
     }
     else
     {
-      <h4>Ingredients</h4>
-      <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your list of ingredients.</p>
+      <h4>Flavors</h4>
+      <p>Please @Html.ActionLink("log in", "LogIn", "Account") to view or manage your list of flavors.</p>
     }
-  </div>
-
-  <div class="col">
-    <h4>Tags for @User.Identity.Name</h4>
-    @if (Model["tags"].Length == 0)
-    {
-      <p>No tags have been added yet!</p>
-    }
-    <ul>
-      @foreach (Tag tag in Model["tags"])
-      {
-        <li>@Html.ActionLink(tag.Title, "Details", "Tags", new { id = @tag.TagId})</li>
-      }
-    </ul>
   </div>
 </div>
 <br>
 <div class="row align-items start">
   <div class="col">
-    <p>@Html.ActionLink("Manage recipes", "Index", "Recipes", null, new { @class = "btn btn-light" })</p>
+    <p>@Html.ActionLink("Manage treats", "Index", "Treats", null, new { @class = "btn btn-light" })</p>
   </div>
   <div class="col">
-    <p>@Html.ActionLink("Manage ingredients", "Index", "Ingredients", null, new { @class = "btn btn-light" })</p>
-  </div>
-  <div class="col">
-    <p>@Html.ActionLink("Manage tags", "Index", "Tags", null, new { @class = "btn btn-light" })</p>
+    <p>@Html.ActionLink("Manage flavors", "Index", "Flavors", null, new { @class = "btn btn-light" })</p>
   </div>
 </div>
 
-<hr><br> *@
+<hr><br>
 
 <p>@Html.ActionLink("Manage Account", "Index", "Account", null, new { @class = "btn btn-secondary" })</p>
