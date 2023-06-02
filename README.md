@@ -1,30 +1,30 @@
 # Recipe Box App
 
-#### Web app using C#, EF Core, SQL, and Identity to create and display Pierre's treats.
+#### _Web app using C#, EF Core, SQL, and Identity to create and display Pierre's treats_
 
 #### By **Laura Hope**
 
 ## Technologies Used
 
-* Git
-* C#/.NET version 6.0.402
-* MySQL Workbench
-* Enity Framework Core version 6.0.0
-* ASP.NET Core Identity version 6.0.0
-* HTML & CSS
-* Bootstrap version 5.2.3
+* _Git_
+* _C#/.NET version 6.0.402_
+* _MySQL Workbench_
+* _Enity Framework Core version 6.0.0_
+* _ASP.NET Core Identity version 6.0.0_
+* _HTML & CSS_
+* _Bootstrap version 5.2.3_
 
 
 ## Description
-_This is an MVC web application that allows users to store and view information about their favorite recipes. Any user can register for an account and login through ASP.NET Core Identity to create a list of ingredients that they currently have as well as add or update the list of recipes. The user can view recipes based on rating or sort the list based on what ingredients are used or by recipe tags. If a user attempts to edit or delete a recipe without authentication, they will be redirected to the account registration page._
+_This is an MVC web application that allows users to store and view information about Pierre's treats. Any user can register for an account and login through ASP.NET Core Identity to create a list of flavors as well as add or update the list of treats. The user can view treats based on what flavors are used or vice versa. If a user attempts to edit or delete a treat or flavor without authentication, they will be redirected to the account registration page._
 
 ## Setup/Installation Requirements
 
 * _Clone this repository to your desktop._
-* _Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory at ```./RecipeBox.Solution/RecipeBox/```._
+* _Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory at ```./PierresSweetSavoryTreats.Solution/PierresTreats/```._
 
 #### To Configure and Access the Database:
-* _Within the production directory "RecipeBox", create a new file called ```appsettings.json```._
+* _Within the production directory "PierresTreats", create a new file called ```appsettings.json```._
 * _Within ```appsettings.json```, put the following code, replacing the "uid" and "pwd" values (in the brackets below) with your own username and password for MySQL. Also replace the "database" value with your desired database name._
 ```
 {
@@ -36,7 +36,7 @@ _This is an MVC web application that allows users to store and view information 
 * _Run the terminal command ```dotnet ef database update``` to create the initial MySQL database._
 
 #### To Run the App in the browser:
-* _Navigate to this project's production directory named "RecipeBox"._
+* _Navigate to this project's production directory named "PierresTreats"._
 * _Run ```dotnet watch run``` in the command line to start the application in development mode with a watcher. This will open the webpage in your browser._
 * _To exit out of the application, you can use the keyboard command "CTRL+C" on Mac and Windows._
 * _Optionally, you can run ```dotnet build``` within the production directory to compile this app without running it._
