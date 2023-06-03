@@ -43,7 +43,7 @@ _This is an MVC web application that allows users to store and view information 
 
 ## Known Bugs
 
-* _No Known Issues as of 6/2/23_
+* _No known issues as of 6/2/23_
 
 ## License
 
